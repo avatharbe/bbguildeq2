@@ -8,21 +8,21 @@
  * Release 2.0.0-a1 version stamp
  */
 
-namespace avathar\bbguild_eq2\migrations\v200a1;
+namespace avathar\bbguildeq2\migrations\v200a1;
 
 class release_2_0_0_a1 extends \phpbb\db\migration\migration
 {
 	public static function depends_on()
 	{
 		return [
-			'\avathar\bbguild_eq2\migrations\basics\data',
+			'\avathar\bbguildeq2\migrations\basics\data',
 		];
 	}
 
 	public function effectively_installed()
 	{
-		return isset($this->config['bbguild_eq2_version'])
-			&& version_compare($this->config['bbguild_eq2_version'], '2.0.0-a1', '>=');
+		return isset($this->config['bbguildeq2_version'])
+			&& version_compare($this->config['bbguildeq2_version'], '2.0.0-a1', '>=');
 	}
 
 	public function update_data()
@@ -35,12 +35,12 @@ class release_2_0_0_a1 extends \phpbb\db\migration\migration
 	public function revert_data()
 	{
 		return [
-			['config.remove', ['bbguild_eq2_version']],
+			['config.remove', ['bbguildeq2_version']],
 		];
 	}
 
 	public function set_version()
 	{
-		$this->config->set('bbguild_eq2_version', '2.0.0-a1');
+		$this->config->set('bbguildeq2_version', '2.0.0-a1');
 	}
 }

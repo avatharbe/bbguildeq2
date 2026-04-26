@@ -4,12 +4,12 @@
  *
  * Registers EverQuest 2 as a game plugin with bbGuild core.
  *
- * @package   bbguild_eq2 v2.0
+ * @package   bbguildeq2 v2.0
  * @copyright 2018 avathar.be
  * @license   http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  */
 
-namespace avathar\bbguild_eq2\game;
+namespace avathar\bbguildeq2\game;
 
 use avathar\bbguild\model\games\game_provider_interface;
 use avathar\bbguild\model\games\game_install_interface;
@@ -18,7 +18,7 @@ use avathar\bbguild\model\games\game_api_interface;
 /**
  * Class eq2_provider
  *
- * @package avathar\bbguild_eq2\game
+ * @package avathar\bbguildeq2\game
  */
 class eq2_provider implements game_provider_interface
 {
@@ -83,7 +83,7 @@ class eq2_provider implements game_provider_interface
 	 */
 	public function get_images_path(): string
 	{
-		return $this->ext_manager->get_extension_path('avathar/bbguild_eq2', true) . 'images/';
+		return $this->ext_manager->get_extension_path('avathar/bbguildeq2', true) . 'images/';
 	}
 
 	/**

@@ -1,5 +1,5 @@
 {
-  "name": "avathar/bbguild-eq2",
+  "name": "avathar/bbguildeq2",
   "type": "phpbb-extension",
   "description": "EverQuest 2 game plugin for bbGuild. Provides EQ2 classes, races, and factions.",
   "homepage": "https://github.com/avandenberghe/bbguild",
@@ -27,7 +27,7 @@
     "version-check": {
       "host": "www.avathar.be",
       "directory": "/versioncheck",
-      "filename": "bbguild-eq2.json",
+      "filename": "bbguildeq2.json",
       "ssl": true
     }
   }
