@@ -1,4 +1,5 @@
 # bbGuild - EverQuest 2
+[![Tests](https://github.com/avatharbe/bbguild_eq2/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguild_eq2/actions/workflows/tests.yml)
 
 Game plugin that adds EverQuest 2 support to [bbGuild](https://github.com/avandenberghe/bbguild).
 
