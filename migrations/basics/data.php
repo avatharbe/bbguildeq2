@@ -75,6 +75,7 @@ class data extends \phpbb\db\migration\container_aware_migration
 			'bb_gameroles_table' => $this->table_prefix . 'bb_gameroles',
 			'bb_language_table'  => $this->table_prefix . 'bb_language',
 			'bb_players_table'   => $this->table_prefix . 'bb_players',
+			'bb_specializations_table' => $this->table_prefix . 'bb_specializations',
 		];
 	}
 
