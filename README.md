@@ -1,12 +1,12 @@
 # bbGuild - EverQuest 2
 [![Tests](https://github.com/avatharbe/bbguildeq2/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguildeq2/actions/workflows/tests.yml)
 
-Game plugin that adds EverQuest 2 support to [bbGuild](https://github.com/avandenberghe/bbguild).
+Game plugin that adds EverQuest 2 support to [bbGuild](https://github.com/avatharbe/bbguild).
 
 ## Features
 
-- **EQ2 Classes** - 25 playable classes (Assassin, Berserker, Bruiser, Brigand, Coercer, Conjuror, Defiler, Dirge, Fury, Guardian, Illusionist, Inquisitor, Monk, Mystic, Necromancer, Paladin, Ranger, Shadowknight, Swashbuckler, Templar, Troubador, Warlock, Warden, Wizard)
-- **EQ2 Races** - 22 playable races including Freeblood
+- **EQ2 Classes** - 27 playable classes (Assassin, Berserker, Bruiser, Brigand, Coercer, Conjuror, Defiler, Dirge, Fury, Guardian, Illusionist, Inquisitor, Monk, Mystic, Necromancer, Paladin, Ranger, Shadowknight, Swashbuckler, Templar, Troubador, Warlock, Warden, Wizard, Beastlord, Channeler)
+- **EQ2 Races** - 23 playable races including Freeblood and Aerakyn
 - **Factions** - Good, Evil, and Neutral alignments
 - **Localization** - Class and race names in English, French, German, and Italian
 - **ZAM Links** - Boss and zone database URLs linked to EQ2 ZAM
@@ -14,7 +14,7 @@ Game plugin that adds EverQuest 2 support to [bbGuild](https://github.com/avande
 ## Requirements
 
 - phpBB >= 3.3.0
-- PHP >= 7.4.0
+- PHP >= 8.1.0
 - **bbGuild core** (`avathar/bbguild`) must be installed and enabled
 
 ## Installation
@@ -43,7 +43,7 @@ Game plugin that adds EverQuest 2 support to [bbGuild](https://github.com/avande
 | 2 | Evil |
 | 3 | Neutral |
 
-### Classes (25)
+### Classes (27)
 
 | ID | Class | Armor |
 |----|-------|-------|
@@ -71,10 +71,12 @@ Game plugin that adds EverQuest 2 support to [bbGuild](https://github.com/avande
 | 22 | Warlock | Cloth |
 | 23 | Warden | Leather |
 | 24 | Wizard | Cloth |
+| 25 | Beastlord | Leather |
+| 26 | Channeler | Mail |
 
-### Races (22)
+### Races (23)
 
-Gnome, Human, Barbarian, Dwarf, High Elf, Dark Elf, Wood Elf, Half Elf, Kerra, Troll, Ogre, Frog, Iksar, Erudite, Halfling, Ratonga, Fae, Froglok, Arasai, Sarnak, Freeblood
+Gnome, Human, Barbarian, Dwarf, High Elf, Dark Elf, Wood Elf, Half Elf, Kerra, Troll, Ogre, Frog, Iksar, Erudite, Halfling, Ratonga, Fae, Froglok, Arasai, Sarnak, Freeblood, Aerakyn
 
 ## License
 
@@ -82,6 +84,6 @@ Gnome, Human, Barbarian, Dwarf, High Elf, Dark Elf, Wood Elf, Half Elf, Kerra, T
 
 ## Links
 
-- [bbGuild Core](https://github.com/avandenberghe/bbguild)
+- [bbGuild Core](https://github.com/avatharbe/bbguild)
 - [EQ2 ZAM](http://eq2.zam.com/)
-- [Issue Tracker](https://github.com/avandenberghe/bbguild/issues)
+- [Issue Tracker](https://github.com/avatharbe/bbguildeq2/issues)
