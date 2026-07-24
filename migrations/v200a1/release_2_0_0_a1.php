@@ -5,7 +5,9 @@
  * @copyright (c) 2026 avathar.be
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
- * Release 2.0.0-a1 version stamp
+ * Release 2.0.0-a1 checkpoint migration
+ *
+ * Canonical version lives in ext::BBGUILDEQ2_VERSION; not in phpbb_config.
  */
 
 namespace avathar\bbguildeq2\migrations\v200a1;
@@ -21,26 +23,15 @@ class release_2_0_0_a1 extends \phpbb\db\migration\migration
 
 	public function effectively_installed()
 	{
-		return isset($this->config['bbguild_eq2_version'])
-			&& version_compare($this->config['bbguild_eq2_version'], '2.0.0-a1', '>=');
-	}
+		// Version lives in ext::BBGUILDEQ2_VERSION, not phpbb_config;
+		// check a concrete artifact instead (the game row this plugin's
+		// basics/data migration seeds).
+		$games_table = $this->table_prefix . 'bb_games';
+		$sql = 'SELECT COUNT(*) AS cnt FROM ' . $games_table . " WHERE game_id = 'eq2'";
+		$result = $this->db->sql_query($sql);
+		$count = (int) $this->db->sql_fetchfield('cnt');
+		$this->db->sql_freeresult($result);
 
-	public function update_data()
-	{
-		return [
-			['custom', [[$this, 'set_version']]],
-		];
-	}
-
-	public function revert_data()
-	{
-		return [
-			['config.remove', ['bbguild_eq2_version']],
-		];
-	}
-
-	public function set_version()
-	{
-		$this->config->set('bbguild_eq2_version', '2.0.0-a1');
+		return $count > 0;
 	}
 }
