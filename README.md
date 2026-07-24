@@ -1,7 +1,7 @@
 # bbGuild - EverQuest 2
 [![Tests](https://github.com/avatharbe/bbguildeq2/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguildeq2/actions/workflows/tests.yml)
 
-Game plugin that adds EverQuest 2 support to [bbGuild](https://github.com/avatharbe/bbguild).
+EverQuest II split the community when it launched, but its guilds still ran on the same DKP-driven raid discipline that had already become standard MMO practice by then. bbguildeq2 covers all 27 classes — including Beastlord and Channeler — and 23 races, including Freeblood and Aerakyn, plus boss and zone links straight to EQ2 ZAM for raid planning. Whether you're running current-content raids or a Time-Locked server, your roster, recruitment, and character claiming now live on the forum instead of scattered across spreadsheets and old ZAM tabs.
 
 ## Features
 
