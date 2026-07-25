@@ -4,12 +4,12 @@
 
 [![Tests](https://github.com/avatharbe/bbguildeq2/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguildeq2/actions/workflows/tests.yml)
 
-EverQuest II split the community when it launched, but its guilds still ran on the same DKP-driven raid discipline that had already become standard MMO practice by then. bbguildeq2 covers all 27 classes — including Beastlord and Channeler — and 23 races, including Freeblood and Aerakyn, plus boss and zone links straight to EQ2 ZAM for raid planning. Whether you're running current-content raids or a Time-Locked server, your roster, recruitment, and character claiming now live on the forum instead of scattered across spreadsheets and old ZAM tabs.
+EverQuest II split the community when it launched, but its guilds still ran on the same DKP-driven raid discipline that had already become standard MMO practice by then. bbguildeq2 covers all 26 classes — including Beastlord and Channeler — and 21 races, including Freeblood and Aerakyn, plus boss and zone links straight to EQ2 ZAM for raid planning. Whether you're running current-content raids or a Time-Locked server, your roster, recruitment, and character claiming now live on the forum instead of scattered across spreadsheets and old ZAM tabs.
 
 ## Features
 
-- **EQ2 Classes** - 27 playable classes (Assassin, Berserker, Bruiser, Brigand, Coercer, Conjuror, Defiler, Dirge, Fury, Guardian, Illusionist, Inquisitor, Monk, Mystic, Necromancer, Paladin, Ranger, Shadowknight, Swashbuckler, Templar, Troubador, Warlock, Warden, Wizard, Beastlord, Channeler)
-- **EQ2 Races** - 23 playable races including Freeblood and Aerakyn
+- **EQ2 Classes** - 26 playable classes (Assassin, Berserker, Bruiser, Brigand, Coercer, Conjuror, Defiler, Dirge, Fury, Guardian, Illusionist, Inquisitor, Monk, Mystic, Necromancer, Paladin, Ranger, Shadowknight, Swashbuckler, Templar, Troubador, Warlock, Warden, Wizard, Beastlord, Channeler)
+- **EQ2 Races** - 21 playable races including Freeblood and Aerakyn
 - **Factions** - Good, Evil, and Neutral alignments
 - **Localization** - Class and race names in English, French, German, and Italian
 - **ZAM Links** - Boss and zone database URLs linked to EQ2 ZAM
@@ -46,7 +46,7 @@ EverQuest II split the community when it launched, but its guilds still ran on t
 | 2 | Evil |
 | 3 | Neutral |
 
-### Classes (27)
+### Classes (26)
 
 | ID | Class | Armor |
 |----|-------|-------|
@@ -77,9 +77,9 @@ EverQuest II split the community when it launched, but its guilds still ran on t
 | 25 | Beastlord | Leather |
 | 26 | Channeler | Mail |
 
-### Races (23)
+### Races (21)
 
-Gnome, Human, Barbarian, Dwarf, High Elf, Dark Elf, Wood Elf, Half Elf, Kerra, Troll, Ogre, Frog, Iksar, Erudite, Halfling, Ratonga, Fae, Froglok, Arasai, Sarnak, Freeblood, Aerakyn
+Gnome, Human, Barbarian, Dwarf, High Elf, Dark Elf, Wood Elf, Half Elf, Kerra, Troll, Ogre, Iksar, Erudite, Halfling, Ratonga, Fae, Froglok, Arasai, Sarnak, Freeblood, Aerakyn
 
 ## License
 

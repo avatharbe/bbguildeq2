@@ -213,7 +213,6 @@ class eq2_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 9,  'race_faction_id' => 3);
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 10, 'race_faction_id' => 2);
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 11, 'race_faction_id' => 2);
-		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 12, 'race_faction_id' => 3);
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 13, 'race_faction_id' => 2);
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 14, 'race_faction_id' => 3);
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 15, 'race_faction_id' => 1);
@@ -244,7 +243,6 @@ class eq2_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 9,  'language' => 'en', 'attribute' => 'race', 'name' => 'Kerra',     'name_short' => 'Kerra');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 10, 'language' => 'en', 'attribute' => 'race', 'name' => 'Troll',     'name_short' => 'Troll');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 11, 'language' => 'en', 'attribute' => 'race', 'name' => 'Ogre',      'name_short' => 'Ogre');
-		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 12, 'language' => 'en', 'attribute' => 'race', 'name' => 'Frog',      'name_short' => 'Frog');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 13, 'language' => 'en', 'attribute' => 'race', 'name' => 'Iksar',     'name_short' => 'Iksar');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 14, 'language' => 'en', 'attribute' => 'race', 'name' => 'Erudite',   'name_short' => 'Erudite');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 15, 'language' => 'en', 'attribute' => 'race', 'name' => 'Halfling',  'name_short' => 'Halfling');
@@ -269,7 +267,6 @@ class eq2_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 9,  'language' => 'fr', 'attribute' => 'race', 'name' => 'Kerran',        'name_short' => 'Kerra');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 10, 'language' => 'fr', 'attribute' => 'race', 'name' => 'Troll',         'name_short' => 'Troll');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 11, 'language' => 'fr', 'attribute' => 'race', 'name' => 'Ogre',          'name_short' => 'Ogre');
-		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 12, 'language' => 'fr', 'attribute' => 'race', 'name' => 'Frog',          'name_short' => 'Frog');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 13, 'language' => 'fr', 'attribute' => 'race', 'name' => 'Iksar',         'name_short' => 'Iksar');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 14, 'language' => 'fr', 'attribute' => 'race', 'name' => 'Erudit',        'name_short' => 'Erudite');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 15, 'language' => 'fr', 'attribute' => 'race', 'name' => 'Halfelin',      'name_short' => 'Halfling');
@@ -294,7 +291,6 @@ class eq2_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 9,  'language' => 'de', 'attribute' => 'race', 'name' => 'Kerraner',   'name_short' => 'Kerra');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 10, 'language' => 'de', 'attribute' => 'race', 'name' => 'Trolle',     'name_short' => 'Troll');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 11, 'language' => 'de', 'attribute' => 'race', 'name' => 'Oger',       'name_short' => 'Ogre');
-		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 12, 'language' => 'de', 'attribute' => 'race', 'name' => 'Froschlok',  'name_short' => 'Frog');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 13, 'language' => 'de', 'attribute' => 'race', 'name' => 'Iksar',      'name_short' => 'Iksar');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 14, 'language' => 'de', 'attribute' => 'race', 'name' => 'Erudit',     'name_short' => 'Erudite');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 15, 'language' => 'de', 'attribute' => 'race', 'name' => 'Halbling',   'name_short' => 'Halfling');
@@ -319,7 +315,6 @@ class eq2_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 9,  'language' => 'it', 'attribute' => 'race', 'name' => 'Kerra',      'name_short' => 'Kerra');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 10, 'language' => 'it', 'attribute' => 'race', 'name' => 'Troll',      'name_short' => 'Troll');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 11, 'language' => 'it', 'attribute' => 'race', 'name' => 'Ogre',       'name_short' => 'Ogre');
-		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 12, 'language' => 'it', 'attribute' => 'race', 'name' => 'Frog',       'name_short' => 'Frog');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 13, 'language' => 'it', 'attribute' => 'race', 'name' => 'Iksar',      'name_short' => 'Iksar');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 14, 'language' => 'it', 'attribute' => 'race', 'name' => 'Erudite',    'name_short' => 'Erudite');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 15, 'language' => 'it', 'attribute' => 'race', 'name' => 'Halfling',   'name_short' => 'Halfling');
