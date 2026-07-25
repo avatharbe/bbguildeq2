@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.0-rc2 25/07/2026
+  - [FIX] Removed a duplicate Froglok race — it was seeded twice (race_id 12 "Frog"/"Froschlok" duplicating race_id 18 "Froglok"/"Grelok"); kept the properly-localised id 18. Corrected the README counts to 26 classes / 21 races. (#2)
+
 ## 2.0.0-rc1 24/07/2026
   - [FIX] Migration dependency pointed at a since-removed bbguild core migration path (`basics\schema`, squashed into `v200b3` in an earlier core release) — this plugin could not install at all against current core
   - [FIX] `get_table_names()` was missing `bb_specializations_table`, which would have silently blocked any future specialization seeding (issue #331 Phase 4)
