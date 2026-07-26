@@ -21,4 +21,5 @@ $lang = array_merge($lang, array(
 	'BBGUILDEQ2_PHP_VERSION_FAIL'	=> 'This extension requires PHP %1$s or higher. You are running PHP %2$s.',
 	'BBGUILDEQ2_PHPBB_VERSION_FAIL'	=> 'This extension requires phpBB %1$s or higher. You are running phpBB %2$s.',
 	'BBGUILDEQ2_REQUIRES_BBGUILD'	=> 'This extension requires the bbGuild core extension (avathar/bbguild) to be enabled first.',
+	'BBGUILDEQ2_REQUIRES_BBGUILD_VERSION'	=> 'This extension requires bbGuild core (avathar/bbguild) version %1$s or newer. Installed version: %2$s.',
 ));
