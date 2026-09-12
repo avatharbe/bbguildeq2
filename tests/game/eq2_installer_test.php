@@ -12,12 +12,11 @@ use avathar\bbguildeq2\game\eq2_installer;
 
 /**
  * Unit test for eq2_installer's protected install_* methods, exercised via
- * reflection against a mocked db driver (no phpBB boot). Only covers the
- * install_* methods this plugin's installer actually defines
- * (install_factions, install_classes, install_races) — install_roles() and
- * install_specs() are inherited no-op-or-default behaviour from
- * abstract_game_install and are not overridden here, so they're out of
- * scope for this plugin's own test coverage.
+ * reflection against a mocked db driver (no phpBB boot). Covers
+ * install_factions, install_classes, install_races, and install_specs (issue
+ * #6) — this plugin's installer overrides all four. install_roles() is
+ * inherited no-op-or-default behaviour from abstract_game_install and is not
+ * overridden here, so it's out of scope for this plugin's own test coverage.
  */
 class eq2_installer_test extends TestCase
 {
@@ -82,6 +81,29 @@ class eq2_installer_test extends TestCase
 		$method = new \ReflectionMethod(eq2_installer::class, $method_name);
 		$method->setAccessible(true);
 		$method->invoke($this->installer);
+	}
+
+	/**
+	 * Set (key => value) or remove (value === null) a single entry in the
+	 * installer's table_names map, on top of whatever setUp() put there.
+	 */
+	private function set_table_name(string $key, ?string $value): void
+	{
+		$ref = new \ReflectionClass($this->installer);
+		$tn = $ref->getProperty('table_names');
+		$tn->setAccessible(true);
+		$current = $tn->getValue($this->installer);
+
+		if ($value === null)
+		{
+			unset($current[$key]);
+		}
+		else
+		{
+			$current[$key] = $value;
+		}
+
+		$tn->setValue($this->installer, $current);
 	}
 
 	// ── Factions ───────────────────────────────────────────
@@ -220,5 +242,34 @@ class eq2_installer_test extends TestCase
 		{
 			$this->assertSame('eq2', $row['game_id']);
 		}
+	}
+
+	// ── Specializations (install_specs, issue #6) ───────────
+	//
+	// eq2_provider::spec_catalog() is deliberately empty: EQ2's classes
+	// (Assassin, Berserker, ..., Beastlord, Channeler — see
+	// install_classes() above) are already the terminal, most-granular
+	// class identity in the live game; there is no further named
+	// specialization layer beneath them to seed (see spec_catalog()'s
+	// docblock in game/eq2_provider.php for the research backing this).
+	// Both branches below therefore assert a confirmed-empty no-op rather
+	// than seeded rows, which is the honest outcome for this plugin.
+
+	public function test_install_specs_no_op_when_table_wired_because_catalog_is_empty(): void
+	{
+		$this->set_table_name('bb_specializations_table', 'phpbb_bb_specializations');
+
+		$this->invoke_protected('install_specs');
+
+		$this->assertCount(0, $this->inserted, 'install_specs() must not insert anything: EQ2 has no additional spec layer beyond its classes');
+	}
+
+	public function test_install_specs_skips_when_table_not_wired(): void
+	{
+		$this->set_table_name('bb_specializations_table', null);
+
+		$this->invoke_protected('install_specs');
+
+		$this->assertCount(0, $this->inserted, 'install_specs() must no-op when bb_specializations_table is not in table_names');
 	}
 }

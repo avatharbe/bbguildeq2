@@ -328,4 +328,46 @@ class eq2_installer extends abstract_game_install
 
 		$this->db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
 	}
+
+	/**
+	 * Installs EQ2 specializations (issue #6).
+	 *
+	 * eq2_provider::spec_catalog() is deliberately empty — see its docblock
+	 * for why EQ2's classes have no further named specialization layer — so
+	 * this cleanly no-ops in practice. Still overridden (rather than left
+	 * as the abstract no-op) so eq2_provider's opt-in to
+	 * specialization_provider_interface is backed by a real install_specs()
+	 * that would pick up real rows if the catalog is ever populated.
+	 *
+	 * Skipped if bb_specializations_table isn't wired in (older core
+	 * installs that haven't run migration v200b4 yet).
+	 */
+	protected function install_specs(): void
+	{
+		if (!isset($this->table_names['bb_specializations_table']))
+		{
+			return;
+		}
+
+		$rows = [];
+		foreach (eq2_provider::spec_catalog() as $class_id => $specs)
+		{
+			foreach ($specs as $spec)
+			{
+				$rows[] = [
+					'game_id'    => $this->game_id,
+					'class_id'   => (int) $class_id,
+					'role_id'    => (int) $spec['role_id'],
+					'spec_name'  => (string) $spec['spec_name'],
+					'spec_icon'  => (string) $spec['spec_icon'],
+					'spec_order' => (int) $spec['spec_order'],
+				];
+			}
+		}
+		if (!$rows)
+		{
+			return;
+		}
+		$this->db->sql_multi_insert($this->table('bb_specializations_table'), $rows);
+	}
 }

@@ -12,13 +12,14 @@
 namespace avathar\bbguildeq2\game;
 
 use avathar\bbguild\model\games\game_provider_interface;
+use avathar\bbguild\model\games\specialization_provider_interface;
 
 /**
  * Class eq2_provider
  *
  * @package avathar\bbguildeq2\game
  */
-class eq2_provider implements game_provider_interface
+class eq2_provider implements game_provider_interface, specialization_provider_interface
 {
 	/** @var eq2_installer */
 	private $installer;
@@ -130,5 +131,56 @@ class eq2_provider implements game_provider_interface
 			'MAIL'    => 'Mail',
 			'PLATE'   => 'Plate',
 		);
+	}
+
+	/**
+	 * Specialization catalog (issue #6), keyed by class_id.
+	 *
+	 * Deliberately empty. EQ2's class list already seeded by
+	 * eq2_installer::install_classes() (Assassin, Berserker, Bruiser, ...,
+	 * Beastlord, Channeler) represents the terminal, most-granular class
+	 * identity in the live game: each archetype (Fighter/Mage/Priest/Scout)
+	 * branches through an intermediate base class (e.g. Fighter -> Warrior
+	 * -> Guardian/Berserker) but the 24 subclasses plus the two standalone
+	 * heroic classes (Beastlord, Channeler) already ARE the class the
+	 * character plays as for the rest of the game — there is no further
+	 * named layer beneath them analogous to WoW talent specs, GW2 Elite
+	 * Specializations, or FFXIV Jobs. EQ2's post-class-choice customization
+	 * (Alternate Advancement / AA trees) is a flexible point-allocation
+	 * system without a fixed set of discrete, named specs per class, so it
+	 * does not map onto bb_specializations' one-row-per-named-spec model.
+	 *
+	 * Confirmed via web research (EQ2 Fandom wiki class category, EQ2
+	 * Classic Emulator wiki class list, Ardwulf's Lair class-choice guide,
+	 * EQ2 Fandom "Alternate Advancement" article) rather than assumed from
+	 * memory. Returning a real but empty catalog here (instead of skipping
+	 * the interface, or inventing a spec layer that doesn't exist in the
+	 * game) keeps eq2_provider a truthful, opt-in implementor of
+	 * specialization_provider_interface: install_specs() below still runs
+	 * and cleanly no-ops.
+	 *
+	 * @return array<int, list<array{spec_name:string,role_id:int,spec_icon:string,spec_order:int}>>
+	 */
+	public static function spec_catalog(): array
+	{
+		return array();
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function get_spec_label(): string
+	{
+		return 'Specialization';
+	}
+
+	/**
+	 * Interface implementation: delegates to the static catalog.
+	 *
+	 * @return array<int, list<array{spec_name:string,role_id:int,spec_icon:string,spec_order:int}>>
+	 */
+	public function get_specializations(): array
+	{
+		return self::spec_catalog();
 	}
 }
