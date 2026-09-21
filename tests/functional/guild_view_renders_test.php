@@ -81,8 +81,24 @@ class avathar_bbguildeq2_guild_view_renders_test extends phpbb_functional_test_c
 			'rank_suffix' => '',
 		)));
 
+		// Seed a portal tab first -- portal_renderer::render() bails out
+		// before ever looking at bb_portal_modules when a guild has zero
+		// tabs (bbguild#360's page-level tabs; see also #374, which
+		// backfills this for guilds created through the normal ACP flow,
+		// but a fixture inserting rows directly via SQL bypasses that flow
+		// entirely and needs to seed its own tab).
+		$db->sql_query('INSERT INTO ' . $this->get_table_prefix() . 'bb_portal_tabs ' . $db->sql_build_array('INSERT', array(
+			'guild_id'   => $guild_id,
+			'tab_name'   => 'Overview',
+			'tab_slug'   => 'welcome',
+			'tab_order'  => 0,
+			'tab_status' => 1,
+		)));
+		$tab_id = (int) $db->sql_nextid();
+
 		$db->sql_query('INSERT INTO ' . $this->get_table_prefix() . 'bb_portal_modules ' . $db->sql_build_array('INSERT', array(
 			'module_classname'     => '\avathar\bbguild\portal\modules\roster',
+			'module_tab'           => $tab_id,
 			'module_column'        => 2,
 			'module_order'         => 1,
 			'module_name'          => 'BBGUILD_PORTAL_ROSTER',
