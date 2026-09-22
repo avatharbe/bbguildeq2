@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.1.0 22/09/2026
+  - [NEW] Added a full EPV/unit/functional/smoke/integration test suite (#5)
+  - [NEW] Added `specialization_provider_interface` (no-op: EverQuest II classes are already terminal, no sub-spec layer to seed) (#6)
+  - [FIX] Missing `bb_portal_tabs` seed row in the guild-view functional test fixture
+  - [FIX] `cleanup.sql`: stale `bbguild_eq2` naming and a wrong column name
+  - [FIX] `depends_on()` pointed at a bbguild core migration removed by core's migration squash
+  - [FIX] Unit test broken by the language-service migration
+  - [FIX] `composer.json`: wrong homepage URL, missing `require-dev`
+  - [CHG] Deprecated `sql_nextid()`/`add_lang_ext()` calls replaced with `sql_last_inserted_id()`/the language service
+  - [CHG] Core version pairing bumped to `>=2.1.0`
+  - [NEW] Added community health files (CoC, security policy, contributing guide, templates)
+  - [NEW] Added a docs site (MkDocs + GitHub Pages)
+
 ## 2.0.0-rc2 25/07/2026
   - [FIX] Removed a duplicate Froglok race — it was seeded twice (race_id 12 "Frog"/"Froschlok" duplicating race_id 18 "Froglok"/"Grelok"); kept the properly-localised id 18. Corrected the README counts to 26 classes / 21 races. (#2)
 
