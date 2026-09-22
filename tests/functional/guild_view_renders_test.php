@@ -94,7 +94,7 @@ class avathar_bbguildeq2_guild_view_renders_test extends phpbb_functional_test_c
 			'tab_order'  => 0,
 			'tab_status' => 1,
 		)));
-		$tab_id = (int) $db->sql_nextid();
+		$tab_id = (int) $db->sql_last_inserted_id();
 
 		$db->sql_query('INSERT INTO ' . $this->get_table_prefix() . 'bb_portal_modules ' . $db->sql_build_array('INSERT', array(
 			'module_classname'     => '\avathar\bbguild\portal\modules\roster',
