@@ -3,8 +3,8 @@
   "type": "phpbb-extension",
   "description": "EverQuest 2 game plugin for bbGuild. Provides EQ2 classes, races, and factions.",
   "homepage": "https://github.com/avatharbe/bbguildeq2",
-  "version": "2.0.0-rc2",
-  "time": "2026-07-25",
+  "version": "2.1.0",
+  "time": "2026-09-22",
   "license": "GPL-2.0-only",
   "authors": [
     {
